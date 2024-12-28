@@ -284,6 +284,33 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      scrollRevelation('.card');
+    });
+
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable certain keyboard shortcuts (F12, Ctrl+Shift+I)
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+      }
+
+      // Prevent the PrintScreen key (keyCode 44)
+      if (e.keyCode === 44) {
+        e.preventDefault();
+      }
+    });
+
+    // Prevent text selection via mouse
+    document.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function (event) {
